@@ -2,6 +2,7 @@ import littlesis
 import networkx
 
 startentity=17683
+depth=1
 
 def getother(r,e):
   return r.entity1 if r.entity1!=e else r.entity2
@@ -29,6 +30,6 @@ ls=littlesis.LittleSis(ak)
 se=ls.entity(startentity)
 
 g=networkx.Graph()
-dograph(g,se,1)
+dograph(g,se,depth)
 
 networkx.write_gexf(g,"network.gexf")
